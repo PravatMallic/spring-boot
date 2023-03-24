@@ -8,14 +8,20 @@ public class Student {
 	
 	private String name;
 	private int roll;
-	@Autowired
+	//@Autowired
 	private Address address;// property based DI
 	
 	public Address getAddress() {
 		return address;
 	}
+	//@Autowired
 	public void setAddress(Address address) {
-		this.address = address;
+		this.address = address;//Setter based DI
+	}
+	@Autowired
+	public Student(Address address) {
+		super();
+		this.address = address;//Construtor based DI
 	}
 	public String getName() {
 		return name;
